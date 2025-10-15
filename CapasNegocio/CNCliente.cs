@@ -1,4 +1,5 @@
-﻿using CapasDatos;
+﻿using System.Data;
+using CapasDatos;
 using CapasEntidad;
 
 namespace CapasNegocio
@@ -6,7 +7,7 @@ namespace CapasNegocio
     public class CNCliente
     {
         // importante la variable global. Instanciamos CD
-        CDCliente cDCliente = new CDCliente();
+        CDCliente CDCliente = new CDCliente();
         // validamos que los datos esten siendo registrados correctamente.  
         public bool validarDatos(CEClientes cliente)
         {
@@ -30,7 +31,11 @@ namespace CapasNegocio
         }
         public void CrearCliente(CEClientes cE)
         {
-            cDCliente.Crear(cE);
+            CDCliente.Crear(cE);
+        }
+        public DataSet obtenerDatos()
+        {
+            return CDCliente.lista();
         }
     }
 }

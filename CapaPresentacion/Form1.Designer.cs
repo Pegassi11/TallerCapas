@@ -43,9 +43,11 @@
             labelCedula = new Label();
             labelMonto = new Label();
             labelCategoria = new Label();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)nudMonto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudId).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // txtNombre
@@ -181,11 +183,22 @@
             labelCategoria.TabIndex = 14;
             labelCategoria.Text = "Categoria";
             // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(520, 40);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.RowHeadersWidth = 51;
+            dgvDatos.Size = new Size(300, 188);
+            dgvDatos.TabIndex = 15;
+            dgvDatos.SelectionChanged += dgvDatos_SelectionChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(dgvDatos);
             Controls.Add(labelCategoria);
             Controls.Add(labelMonto);
             Controls.Add(labelCedula);
@@ -206,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)nudMonto).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctFoto).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudId).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -226,5 +240,6 @@
         private Label labelCedula;
         private Label labelMonto;
         private Label labelCategoria;
+        private DataGridView dgvDatos;
     }
 }

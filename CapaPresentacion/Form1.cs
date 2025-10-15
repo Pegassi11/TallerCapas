@@ -66,5 +66,22 @@ namespace CapaPresentacion
             // --- CORRECCIÓN 3: Usar el objeto "cNCliente" aquí también ---
             cNCliente.CrearCliente(cEClientes);
         }
+
+        private void dgvDatos_SelectionChanged(object sender, EventArgs e)
+        {
+            // Primero, se comprueba si hay una fila seleccionada para evitar errores
+            if (dgvDatos.CurrentRow != null)
+            {
+                // Se transfieren los datos de las celdas de la tabla a los controles del formulario
+                nudId.Value = Convert.ToInt32(dgvDatos.CurrentRow.Cells["idClientes"].Value);
+                txtNombre.Text = dgvDatos.CurrentRow.Cells["nombreApellido"].Value.ToString();
+                txtCedula.Text = dgvDatos.CurrentRow.Cells["cedCliente"].Value.ToString();
+                cmbCateg.Text = dgvDatos.CurrentRow.Cells["cgtCliente"].Value.ToString();
+                // dtpFecha.Value = (DateTime)dgvDatos.CurrentRow.Cells["fechaCrea"].Value; // Necesita un control DateTimePicker
+                nudMonto.Value = Convert.ToDecimal(dgvDatos.CurrentRow.Cells["montoTotal"].Value);
+                // txtLote.Text = dgvDatos.CurrentRow.Cells["numLote"].Value.ToString(); // Necesita un TextBox para el Lote
+                pctFoto.ImageLocation = dgvDatos.CurrentRow.Cells["fotoCliente"].Value.ToString();
+    }
+        }
     }
 }
