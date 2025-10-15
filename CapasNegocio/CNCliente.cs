@@ -29,8 +29,7 @@ namespace CapasNegocio
             }
             if (cliente.montoTotal <= 0)
             {
-                MessageBox.Show("El monto debe ser mayor que cero.");
-                validado = false;
+                throw new Exception("El monto debe ser mayor que cero.");
             }
 
             return validado;
@@ -42,6 +41,14 @@ namespace CapasNegocio
         public DataSet obtenerDatos()
         {
             return CDCliente.lista();
+        }
+        public void ActualizarCliente(CEClientes cE)
+        {
+            // Se reutiliza la validación para asegurar que los datos son correctos.
+            validarDatos(cE);
+
+            // Se pasa la orden a la capa de datos.
+            CDCliente.Actualizar(cE);
         }
     }
 }

@@ -72,16 +72,52 @@ namespace CapaPresentacion
             // Primero, se comprueba si hay una fila seleccionada para evitar errores
             if (dgvDatos.CurrentRow != null)
             {
-                // Se transfieren los datos de las celdas de la tabla a los controles del formulario
-                nudId.Value = Convert.ToInt32(dgvDatos.CurrentRow.Cells["idClientes"].Value);
-                txtNombre.Text = dgvDatos.CurrentRow.Cells["nombreApellido"].Value.ToString();
-                txtCedula.Text = dgvDatos.CurrentRow.Cells["cedCliente"].Value.ToString();
-                cmbCateg.Text = dgvDatos.CurrentRow.Cells["cgtCliente"].Value.ToString();
-                // dtpFecha.Value = (DateTime)dgvDatos.CurrentRow.Cells["fechaCrea"].Value; // Necesita un control DateTimePicker
-                nudMonto.Value = Convert.ToDecimal(dgvDatos.CurrentRow.Cells["montoTotal"].Value);
-                // txtLote.Text = dgvDatos.CurrentRow.Cells["numLote"].Value.ToString(); // Necesita un TextBox para el Lote
-                pctFoto.ImageLocation = dgvDatos.CurrentRow.Cells["fotoCliente"].Value.ToString();
-    }
+                // --- CORRECCIÓN: Se usan los nombres de columna exactos de la base de datos ---
+                nudId.Value = Convert.ToInt32(dgvDatos.CurrentRow.Cells["IdClientes"].Value);
+                txtNombre.Text = dgvDatos.CurrentRow.Cells["NombreComp"].Value.ToString();
+                txtCedula.Text = dgvDatos.CurrentRow.Cells["CedCliente"].Value.ToString();
+                cmbCateg.Text = dgvDatos.CurrentRow.Cells["CtgCliente"].Value.ToString();
+                nudMonto.Value = Convert.ToDecimal(dgvDatos.CurrentRow.Cells["MontoTotal"].Value);
+                pctFoto.ImageLocation = dgvDatos.CurrentRow.Cells["FotoCliente"].Value.ToString();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Ahora simplemente se ejecuta el procedimiento estándar de carga.
+            CargarGrid();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Recolectar los datos del formulario en un objeto CEClientes.
+                CEClientes cEClientes = new CEClientes();
+                cEClientes.IdClientes = (int)nudId.Value;
+                cEClientes.nombreComp = txtNombre.Text;
+                cEClientes.cedCliente = txtCedula.Text;
+                cEClientes.ctgCliente = cmbCateg.Text;
+                cEClientes.fotoCliente = pctFoto.ImageLocation;
+                cEClientes.montoTotal = (double)nudMonto.Value;
+
+                // 2. Llamar al método de la capa de negocio para actualizar.
+                cNCliente.ActualizarCliente(cEClientes);
+
+                // 3. Notificar al usuario y refrescar la tabla.
+                MessageBox.Show("Cliente actualizado exitosamente.");
+                CargarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message);
+            }
+        }
+        private void CargarGrid()
+        {
+            // Esta es la misma línea de código que está en el evento Form_Load.
+            // Pide los datos a la capa de negocio y los asigna a la tabla.
+            dgvDatos.DataSource = cNCliente.obtenerDatos().Tables["clientes"];
         }
     }
 }

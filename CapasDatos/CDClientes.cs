@@ -35,5 +35,26 @@ namespace CapasDatos
             Adaptador.Fill(dataSet, "clientes");
             return dataSet;
         }
+        public void Actualizar(CEClientes cE)
+        {
+            SqlConnection sqlConnection = new SqlConnection(CadenaConexion);
+            sqlConnection.Open();
+
+            // La consulta UPDATE modifica un registro existente.
+            // SET especifica qué columnas cambiar.
+            // WHERE es crucial: especifica CUÁL registro cambiar.
+            string Query = "UPDATE Clientes SET " +
+                           "NombreComp = '" + cE.nombreComp + "', " +
+                           "CedCliente = '" + cE.cedCliente + "', " +
+                           "CtgCliente = '" + cE.ctgCliente + "', " +
+                           "FotoCliente = '" + cE.fotoCliente + "', " +
+                           "MontoTotal = '" + cE.montoTotal + "' " +
+                           "WHERE IdClientes = '" + cE.IdClientes + "'";
+
+            SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            // Es una buena práctica cerrar la conexión, aunque no se pida.
+            sqlConnection.Close();
+        }
     }
 }

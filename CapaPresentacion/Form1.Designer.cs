@@ -44,6 +44,7 @@
             labelMonto = new Label();
             labelCategoria = new Label();
             dgvDatos = new DataGridView();
+            btnActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)nudMonto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudId).BeginInit();
@@ -52,7 +53,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(154, 76);
+            txtNombre.Location = new Point(150, 63);
             txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(114, 27);
@@ -60,7 +61,7 @@
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(153, 115);
+            txtCedula.Location = new Point(149, 102);
             txtCedula.Margin = new Padding(3, 4, 3, 4);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(114, 27);
@@ -68,7 +69,7 @@
             // 
             // nudMonto
             // 
-            nudMonto.Location = new Point(154, 153);
+            nudMonto.Location = new Point(150, 140);
             nudMonto.Margin = new Padding(3, 4, 3, 4);
             nudMonto.Name = "nudMonto";
             nudMonto.Size = new Size(137, 27);
@@ -78,7 +79,7 @@
             // 
             cmbCateg.FormattingEnabled = true;
             cmbCateg.Items.AddRange(new object[] { "Activo", "Potencial", "Inactivo" });
-            cmbCateg.Location = new Point(154, 192);
+            cmbCateg.Location = new Point(150, 179);
             cmbCateg.Margin = new Padding(3, 4, 3, 4);
             cmbCateg.Name = "cmbCateg";
             cmbCateg.Size = new Size(138, 28);
@@ -86,17 +87,17 @@
             // 
             // pctFoto
             // 
-            pctFoto.Location = new Point(298, 37);
+            pctFoto.Location = new Point(294, 24);
             pctFoto.Margin = new Padding(3, 4, 3, 4);
             pctFoto.Name = "pctFoto";
-            pctFoto.Size = new Size(114, 67);
+            pctFoto.Size = new Size(215, 191);
             pctFoto.TabIndex = 5;
             pctFoto.TabStop = false;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(318, 108);
+            linkLabel1.Location = new Point(352, 219);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(87, 20);
             linkLabel1.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(419, 35);
+            btnNuevo.Location = new Point(331, 264);
             btnNuevo.Margin = new Padding(3, 4, 3, 4);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(86, 31);
@@ -121,7 +122,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(419, 73);
+            btnGuardar.Location = new Point(423, 264);
             btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(86, 31);
@@ -132,7 +133,7 @@
             // 
             // nudId
             // 
-            nudId.Location = new Point(153, 37);
+            nudId.Location = new Point(149, 24);
             nudId.Margin = new Padding(3, 4, 3, 4);
             nudId.Name = "nudId";
             nudId.Size = new Size(137, 27);
@@ -141,7 +142,7 @@
             // labelID
             // 
             labelID.AutoSize = true;
-            labelID.Location = new Point(123, 40);
+            labelID.Location = new Point(119, 27);
             labelID.Name = "labelID";
             labelID.Size = new Size(24, 20);
             labelID.TabIndex = 10;
@@ -150,7 +151,7 @@
             // labelNombre
             // 
             labelNombre.AutoSize = true;
-            labelNombre.Location = new Point(83, 78);
+            labelNombre.Location = new Point(79, 65);
             labelNombre.Name = "labelNombre";
             labelNombre.Size = new Size(64, 20);
             labelNombre.TabIndex = 11;
@@ -159,7 +160,7 @@
             // labelCedula
             // 
             labelCedula.AutoSize = true;
-            labelCedula.Location = new Point(92, 118);
+            labelCedula.Location = new Point(88, 105);
             labelCedula.Name = "labelCedula";
             labelCedula.Size = new Size(55, 20);
             labelCedula.TabIndex = 12;
@@ -168,7 +169,7 @@
             // labelMonto
             // 
             labelMonto.AutoSize = true;
-            labelMonto.Location = new Point(95, 155);
+            labelMonto.Location = new Point(91, 142);
             labelMonto.Name = "labelMonto";
             labelMonto.Size = new Size(53, 20);
             labelMonto.TabIndex = 13;
@@ -177,7 +178,7 @@
             // labelCategoria
             // 
             labelCategoria.AutoSize = true;
-            labelCategoria.Location = new Point(74, 195);
+            labelCategoria.Location = new Point(70, 182);
             labelCategoria.Name = "labelCategoria";
             labelCategoria.Size = new Size(74, 20);
             labelCategoria.TabIndex = 14;
@@ -186,18 +187,29 @@
             // dgvDatos
             // 
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Location = new Point(520, 40);
+            dgvDatos.Location = new Point(515, 27);
             dgvDatos.Name = "dgvDatos";
             dgvDatos.RowHeadersWidth = 51;
-            dgvDatos.Size = new Size(300, 188);
+            dgvDatos.Size = new Size(353, 188);
             dgvDatos.TabIndex = 15;
             dgvDatos.SelectionChanged += dgvDatos_SelectionChanged;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(515, 266);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.TabIndex = 16;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(btnActualizar);
             Controls.Add(dgvDatos);
             Controls.Add(labelCategoria);
             Controls.Add(labelMonto);
@@ -216,6 +228,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)nudMonto).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctFoto).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudId).EndInit();
@@ -241,5 +254,6 @@
         private Label labelMonto;
         private Label labelCategoria;
         private DataGridView dgvDatos;
+        private Button btnActualizar;
     }
 }
