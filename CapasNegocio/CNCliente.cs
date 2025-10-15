@@ -27,6 +27,12 @@ namespace CapasNegocio
                 MessageBox.Show("el campo foto es obligatorio");
                 validado = false;
             }
+            if (cliente.montoTotal <= 0)
+            {
+                MessageBox.Show("El monto debe ser mayor que cero.");
+                validado = false;
+            }
+
             return validado;
         }
         public void CrearCliente(CEClientes cE)
