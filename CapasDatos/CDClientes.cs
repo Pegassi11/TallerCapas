@@ -14,9 +14,8 @@ namespace CapasDatos
             SqlConnection sqlConnection = new SqlConnection(CadenaConexion);
             sqlConnection.Open();
 
-            // --- CORRECCIÓN FINAL ---
-            string Query = "INSERT INTO Clientes (IdClientes, NombreComp, CedCliente, CtgCliente, FotoCliente, MontoTotal) " +
-                           "VALUES ('" + cE.IdClientes + "', '" + cE.nombreComp + "', '" + cE.cedCliente + "','" + cE.ctgCliente + "','" + cE.fotoCliente + "', '" + cE.montoTotal + "')";
+            string Query = "INSERT INTO Clientes (IdClientes, NombreComp, CedCliente, CtgCliente, FotoCliente, MontoTotal, Correo, Genero, Interes1, Interes2, Interes3) " +
+                   "VALUES ('" + cE.IdClientes + "', '" + cE.nombreComp + "', '" + cE.cedCliente + "','" + cE.ctgCliente + "','" + cE.fotoCliente + "', '" + cE.montoTotal + "', '" + cE.Correo + "', '" + cE.Genero + "', '" + (cE.Interes1 ? 1 : 0) + "', '" + (cE.Interes2 ? 1 : 0) + "', '" + (cE.Interes3 ? 1 : 0) + "')";
 
             SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
             sqlCommand.ExecuteNonQuery();
@@ -27,8 +26,7 @@ namespace CapasDatos
         {
             SqlConnection sqlConnection = new SqlConnection(CadenaConexion);
             sqlConnection.Open();
-            // Para mayor precisión, se usan los nombres exactos de las columnas de la BD
-            string Query = "SELECT IdClientes, NombreComp, CedCliente, CtgCliente, FotoCliente, MontoTotal FROM Clientes";
+            string Query = "SELECT IdClientes, NombreComp, CedCliente, CtgCliente, FotoCliente, MontoTotal, Correo, Genero, Interes1, Interes2, Interes3 FROM Clientes";
             SqlDataAdapter Adaptador;
             DataSet dataSet = new DataSet();
             Adaptador = new SqlDataAdapter(Query, sqlConnection);
@@ -48,7 +46,12 @@ namespace CapasDatos
                            "CedCliente = '" + cE.cedCliente + "', " +
                            "CtgCliente = '" + cE.ctgCliente + "', " +
                            "FotoCliente = '" + cE.fotoCliente + "', " +
-                           "MontoTotal = '" + cE.montoTotal + "' " +
+                           "MontoTotal = '" + cE.montoTotal + "', " +
+                           "Correo = '" + cE.Correo + "', " +
+                           "Genero = '" + cE.Genero + "', " +               
+                           "Interes1 = '" + (cE.Interes1 ? 1 : 0) + "', " + 
+                           "Interes2 = '" + (cE.Interes2 ? 1 : 0) + "', " + 
+                           "Interes3 = '" + (cE.Interes3 ? 1 : 0) + "' " +
                            "WHERE IdClientes = '" + cE.IdClientes + "'";
 
             SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
