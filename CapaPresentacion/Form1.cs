@@ -37,15 +37,13 @@ namespace CapaPresentacion
             nudMonto.Value = 0;
             txtCorreo.Text = string.Empty;
             // --- NUEVO CÓDIGO (Taller 6) ---
-            // Uncheck both RadioButtons for Genero
+            // Deseleccionar los radiobuttons del genero
             rbSr.Checked = false;
             rbSra.Checked = false;
 
-            // If you have added CheckBoxes (e.g., chkInteres1, chkInteres2, chkInteres3)
-            // Add lines to uncheck them here:
-            // chkInteres1.Checked = false;
-            // chkInteres2.Checked = false;
-            // chkInteres3.Checked = false;
+            chkInteres1.Checked = false;
+            chkInteres2.Checked = false;
+            chkInteres3.Checked = false;
             // --- FIN NUEVO CÓDIGO ---
 
             // Optional: Set focus back to the first field
@@ -76,12 +74,12 @@ namespace CapaPresentacion
             }
             else
             {
-                cEClientes.Genero = ""; // Opcional: Guarda vacío si ninguno está marcado
+                cEClientes.Genero = ""; // Guarda vacío si ninguno está marcado
             }
-            // Asignar valores a Intereses (se hará en el siguiente paso, pero prepara el objeto)
-            cEClientes.Interes1 = false; // Valor predeterminado
-            cEClientes.Interes2 = false; // Valor predeterminado
-            cEClientes.Interes3 = false; // Valor predeterminado
+            // Ver cada interes seleccionado en los CheckBoxes
+            cEClientes.Interes1 = chkInteres1.Checked; // verdadero si es seleccionado
+            cEClientes.Interes2 = chkInteres2.Checked;
+            cEClientes.Interes3 = chkInteres3.Checked;
 
             bool validado;
             validado = cNCliente.validarDatos(cEClientes);
@@ -136,9 +134,9 @@ namespace CapaPresentacion
 
                 // Cargar los Intereses en los CheckBoxes
                 // Se usa Convert.ToBoolean para pasar de bit (0/1) a true/false
-                //chkInteres1.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes1"].Value);
-                //chkInteres2.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes2"].Value);
-                //chkInteres3.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes3"].Value);
+                chkInteres1.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes1"].Value);
+                chkInteres2.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes2"].Value);
+                chkInteres3.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes3"].Value);
                 // --- FIN CÓDIGO NUEVO ---
             }
         }
@@ -183,6 +181,9 @@ namespace CapaPresentacion
                 {
                     cEClientes.Genero = ""; // Opcional: Guarda vacío si ninguno está marcado
                 }
+                cEClientes.Interes1 = chkInteres1.Checked;
+                cEClientes.Interes2 = chkInteres2.Checked;
+                cEClientes.Interes3 = chkInteres3.Checked;
 
                 // 2. Llamar al método de la capa de negocio para actualizar.
                 cNCliente.ActualizarCliente(cEClientes);

@@ -48,13 +48,18 @@
             labelCorreo = new Label();
             txtCorreo = new TextBox();
             groupBox1 = new GroupBox();
-            rbSr = new RadioButton();
             rbSra = new RadioButton();
+            rbSr = new RadioButton();
+            groupBox2 = new GroupBox();
+            chkInteres3 = new CheckBox();
+            chkInteres2 = new CheckBox();
+            chkInteres1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)nudMonto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctFoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudId).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // txtNombre
@@ -92,17 +97,17 @@
             // 
             // pctFoto
             // 
-            pctFoto.Location = new Point(294, 24);
+            pctFoto.Location = new Point(473, 24);
             pctFoto.Margin = new Padding(3, 4, 3, 4);
             pctFoto.Name = "pctFoto";
-            pctFoto.Size = new Size(257, 194);
+            pctFoto.Size = new Size(276, 183);
             pctFoto.TabIndex = 5;
             pctFoto.TabStop = false;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(368, 222);
+            linkLabel1.Location = new Point(574, 222);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(87, 20);
             linkLabel1.TabIndex = 6;
@@ -116,7 +121,7 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(569, 79);
+            btnNuevo.Location = new Point(766, 66);
             btnNuevo.Margin = new Padding(3, 4, 3, 4);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(94, 31);
@@ -127,7 +132,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(569, 118);
+            btnGuardar.Location = new Point(766, 105);
             btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(94, 31);
@@ -193,16 +198,16 @@
             // dgvDatos
             // 
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Location = new Point(333, 253);
+            dgvDatos.Location = new Point(70, 286);
             dgvDatos.Name = "dgvDatos";
             dgvDatos.RowHeadersWidth = 51;
-            dgvDatos.Size = new Size(593, 188);
+            dgvDatos.Size = new Size(790, 216);
             dgvDatos.TabIndex = 15;
             dgvDatos.SelectionChanged += dgvDatos_SelectionChanged;
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(569, 156);
+            btnActualizar.Location = new Point(766, 143);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(94, 29);
             btnActualizar.TabIndex = 16;
@@ -232,23 +237,12 @@
             // 
             groupBox1.Controls.Add(rbSra);
             groupBox1.Controls.Add(rbSr);
-            groupBox1.Location = new Point(149, 253);
+            groupBox1.Location = new Point(296, 24);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(139, 85);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Género";
-            // 
-            // rbSr
-            // 
-            rbSr.AutoSize = true;
-            rbSr.Location = new Point(65, 21);
-            rbSr.Name = "rbSr";
-            rbSr.Size = new Size(46, 24);
-            rbSr.TabIndex = 0;
-            rbSr.TabStop = true;
-            rbSr.Text = "Sr.";
-            rbSr.UseVisualStyleBackColor = true;
             // 
             // rbSra
             // 
@@ -261,11 +255,65 @@
             rbSra.Text = "Sra.";
             rbSra.UseVisualStyleBackColor = true;
             // 
+            // rbSr
+            // 
+            rbSr.AutoSize = true;
+            rbSr.Location = new Point(65, 21);
+            rbSr.Name = "rbSr";
+            rbSr.Size = new Size(46, 24);
+            rbSr.TabIndex = 0;
+            rbSr.TabStop = true;
+            rbSr.Text = "Sr.";
+            rbSr.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(chkInteres3);
+            groupBox2.Controls.Add(chkInteres2);
+            groupBox2.Controls.Add(chkInteres1);
+            groupBox2.Location = new Point(296, 122);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(171, 120);
+            groupBox2.TabIndex = 20;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Intereses";
+            // 
+            // chkInteres3
+            // 
+            chkInteres3.AutoSize = true;
+            chkInteres3.Location = new Point(70, 83);
+            chkInteres3.Name = "chkInteres3";
+            chkInteres3.Size = new Size(90, 24);
+            chkInteres3.TabIndex = 2;
+            chkInteres3.Text = "Compras";
+            chkInteres3.UseVisualStyleBackColor = true;
+            // 
+            // chkInteres2
+            // 
+            chkInteres2.AutoSize = true;
+            chkInteres2.Location = new Point(70, 53);
+            chkInteres2.Name = "chkInteres2";
+            chkInteres2.Size = new Size(66, 24);
+            chkInteres2.TabIndex = 1;
+            chkInteres2.Text = "Playa";
+            chkInteres2.UseVisualStyleBackColor = true;
+            // 
+            // chkInteres1
+            // 
+            chkInteres1.AutoSize = true;
+            chkInteres1.Location = new Point(70, 23);
+            chkInteres1.Name = "chkInteres1";
+            chkInteres1.Size = new Size(90, 24);
+            chkInteres1.TabIndex = 0;
+            chkInteres1.Text = "Montaña";
+            chkInteres1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1042, 544);
+            ClientSize = new Size(942, 537);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(txtCorreo);
             Controls.Add(labelCorreo);
@@ -297,6 +345,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -324,5 +374,9 @@
         private GroupBox groupBox1;
         private RadioButton rbSra;
         private RadioButton rbSr;
+        private GroupBox groupBox2;
+        private CheckBox chkInteres2;
+        private CheckBox chkInteres1;
+        private CheckBox chkInteres3;
     }
 }
