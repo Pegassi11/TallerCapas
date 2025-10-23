@@ -134,9 +134,14 @@ namespace CapaPresentacion
 
                 // Cargar los Intereses en los CheckBoxes
                 // Se usa Convert.ToBoolean para pasar de bit (0/1) a true/false
-                chkInteres1.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes1"].Value);
-                chkInteres2.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes2"].Value);
-                chkInteres3.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes3"].Value);
+                object v1 = dgvDatos.CurrentRow.Cells["Interes1"].Value;
+                chkInteres1.Checked = v1 != DBNull.Value && Convert.ToBoolean(v1);
+
+                object v2 = dgvDatos.CurrentRow.Cells["Interes2"].Value;
+                chkInteres2.Checked = v2 != DBNull.Value && Convert.ToBoolean(v2);
+
+                object v3 = dgvDatos.CurrentRow.Cells["Interes3"].Value;
+                chkInteres3.Checked = v3 != DBNull.Value && Convert.ToBoolean(v3);
                 // --- FIN CÓDIGO NUEVO ---
             }
         }
@@ -246,7 +251,7 @@ namespace CapaPresentacion
             if (e.Control && e.KeyCode == Keys.S)
             {
                 // Si ambas condiciones se cumplen, se muestra el mensaje
-                MessageBox.Show("Guardando...");
+                MessageBox.Show("Guardando…");
 
                 // Opcional: llamar al método de guardado
                 // btnGuardar_Click(sender, e);
