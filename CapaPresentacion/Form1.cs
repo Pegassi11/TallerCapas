@@ -251,7 +251,7 @@ namespace CapaPresentacion
             if (e.Control && e.KeyCode == Keys.S)
             {
                 // Si ambas condiciones se cumplen, se muestra el mensaje
-                MessageBox.Show("Guardando");
+                MessageBox.Show("Guardando");
 
                 // Opcional: llamar al método de guardado
                 // btnGuardar_Click(sender, e);
