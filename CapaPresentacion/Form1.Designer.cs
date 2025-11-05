@@ -64,52 +64,47 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(150, 63);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Location = new Point(131, 47);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(138, 27);
+            txtNombre.Size = new Size(121, 23);
             txtNombre.TabIndex = 1;
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(149, 102);
-            txtCedula.Margin = new Padding(3, 4, 3, 4);
+            txtCedula.Location = new Point(130, 76);
             txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(139, 27);
+            txtCedula.Size = new Size(122, 23);
             txtCedula.TabIndex = 2;
             // 
             // nudMonto
             // 
-            nudMonto.Location = new Point(150, 140);
-            nudMonto.Margin = new Padding(3, 4, 3, 4);
+            nudMonto.Location = new Point(131, 105);
             nudMonto.Name = "nudMonto";
-            nudMonto.Size = new Size(138, 27);
+            nudMonto.Size = new Size(121, 23);
             nudMonto.TabIndex = 3;
             // 
             // cmbCateg
             // 
             cmbCateg.FormattingEnabled = true;
-            cmbCateg.Location = new Point(150, 179);
-            cmbCateg.Margin = new Padding(3, 4, 3, 4);
+            cmbCateg.Location = new Point(131, 134);
             cmbCateg.Name = "cmbCateg";
-            cmbCateg.Size = new Size(138, 28);
+            cmbCateg.Size = new Size(121, 23);
             cmbCateg.TabIndex = 4;
             // 
             // pctFoto
             // 
-            pctFoto.Location = new Point(473, 24);
-            pctFoto.Margin = new Padding(3, 4, 3, 4);
+            pctFoto.Location = new Point(414, 18);
             pctFoto.Name = "pctFoto";
-            pctFoto.Size = new Size(276, 183);
+            pctFoto.Size = new Size(242, 137);
             pctFoto.TabIndex = 5;
             pctFoto.TabStop = false;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(574, 222);
+            linkLabel1.Location = new Point(502, 166);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(87, 20);
+            linkLabel1.Size = new Size(69, 15);
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Cargar Foto";
@@ -121,10 +116,9 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(766, 66);
-            btnNuevo.Margin = new Padding(3, 4, 3, 4);
+            btnNuevo.Location = new Point(670, 50);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(94, 31);
+            btnNuevo.Size = new Size(82, 23);
             btnNuevo.TabIndex = 7;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
@@ -132,10 +126,9 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(766, 105);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Location = new Point(670, 79);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 31);
+            btnGuardar.Size = new Size(82, 23);
             btnGuardar.TabIndex = 8;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -143,73 +136,75 @@
             // 
             // nudId
             // 
-            nudId.Location = new Point(149, 24);
-            nudId.Margin = new Padding(3, 4, 3, 4);
+            nudId.Location = new Point(130, 18);
             nudId.Name = "nudId";
-            nudId.Size = new Size(139, 27);
+            nudId.Size = new Size(122, 23);
             nudId.TabIndex = 9;
             nudId.Validating += nudId_Validating;
             // 
             // labelID
             // 
             labelID.AutoSize = true;
-            labelID.Location = new Point(119, 27);
+            labelID.Location = new Point(104, 20);
             labelID.Name = "labelID";
-            labelID.Size = new Size(24, 20);
+            labelID.Size = new Size(18, 15);
             labelID.TabIndex = 10;
             labelID.Text = "ID";
             // 
             // labelNombre
             // 
             labelNombre.AutoSize = true;
-            labelNombre.Location = new Point(79, 65);
+            labelNombre.Location = new Point(69, 49);
             labelNombre.Name = "labelNombre";
-            labelNombre.Size = new Size(64, 20);
+            labelNombre.Size = new Size(51, 15);
             labelNombre.TabIndex = 11;
             labelNombre.Text = "Nombre";
             // 
             // labelCedula
             // 
             labelCedula.AutoSize = true;
-            labelCedula.Location = new Point(88, 105);
+            labelCedula.Location = new Point(77, 79);
             labelCedula.Name = "labelCedula";
-            labelCedula.Size = new Size(55, 20);
+            labelCedula.Size = new Size(44, 15);
             labelCedula.TabIndex = 12;
             labelCedula.Text = "Cedula";
             // 
             // labelMonto
             // 
             labelMonto.AutoSize = true;
-            labelMonto.Location = new Point(91, 142);
+            labelMonto.Location = new Point(80, 106);
             labelMonto.Name = "labelMonto";
-            labelMonto.Size = new Size(53, 20);
+            labelMonto.Size = new Size(43, 15);
             labelMonto.TabIndex = 13;
             labelMonto.Text = "Monto";
             // 
             // labelCategoria
             // 
             labelCategoria.AutoSize = true;
-            labelCategoria.Location = new Point(70, 182);
+            labelCategoria.Location = new Point(61, 136);
             labelCategoria.Name = "labelCategoria";
-            labelCategoria.Size = new Size(74, 20);
+            labelCategoria.Size = new Size(58, 15);
             labelCategoria.TabIndex = 14;
             labelCategoria.Text = "Categoria";
             // 
             // dgvDatos
             // 
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Location = new Point(70, 286);
+            dgvDatos.Location = new Point(61, 214);
+            dgvDatos.Margin = new Padding(3, 2, 3, 2);
             dgvDatos.Name = "dgvDatos";
+            dgvDatos.ReadOnly = true;
             dgvDatos.RowHeadersWidth = 51;
-            dgvDatos.Size = new Size(790, 216);
+            dgvDatos.Size = new Size(691, 162);
             dgvDatos.TabIndex = 15;
             dgvDatos.SelectionChanged += dgvDatos_SelectionChanged;
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(766, 143);
+            btnActualizar.Location = new Point(670, 107);
+            btnActualizar.Margin = new Padding(3, 2, 3, 2);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.Size = new Size(82, 22);
             btnActualizar.TabIndex = 16;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
@@ -218,18 +213,17 @@
             // labelCorreo
             // 
             labelCorreo.AutoSize = true;
-            labelCorreo.Location = new Point(89, 218);
+            labelCorreo.Location = new Point(78, 164);
             labelCorreo.Name = "labelCorreo";
-            labelCorreo.Size = new Size(54, 20);
+            labelCorreo.Size = new Size(43, 15);
             labelCorreo.TabIndex = 17;
             labelCorreo.Text = "Correo";
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(150, 215);
-            txtCorreo.Margin = new Padding(3, 4, 3, 4);
+            txtCorreo.Location = new Point(131, 161);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(138, 27);
+            txtCorreo.Size = new Size(121, 23);
             txtCorreo.TabIndex = 18;
             txtCorreo.Validating += txtCorreo_Validating;
             // 
@@ -237,9 +231,11 @@
             // 
             groupBox1.Controls.Add(rbSra);
             groupBox1.Controls.Add(rbSr);
-            groupBox1.Location = new Point(296, 24);
+            groupBox1.Location = new Point(259, 18);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(139, 85);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(122, 64);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Género";
@@ -247,9 +243,10 @@
             // rbSra
             // 
             rbSra.AutoSize = true;
-            rbSra.Location = new Point(65, 51);
+            rbSra.Location = new Point(57, 38);
+            rbSra.Margin = new Padding(3, 2, 3, 2);
             rbSra.Name = "rbSra";
-            rbSra.Size = new Size(54, 24);
+            rbSra.Size = new Size(44, 19);
             rbSra.TabIndex = 1;
             rbSra.TabStop = true;
             rbSra.Text = "Sra.";
@@ -258,9 +255,10 @@
             // rbSr
             // 
             rbSr.AutoSize = true;
-            rbSr.Location = new Point(65, 21);
+            rbSr.Location = new Point(57, 16);
+            rbSr.Margin = new Padding(3, 2, 3, 2);
             rbSr.Name = "rbSr";
-            rbSr.Size = new Size(46, 24);
+            rbSr.Size = new Size(38, 19);
             rbSr.TabIndex = 0;
             rbSr.TabStop = true;
             rbSr.Text = "Sr.";
@@ -271,9 +269,11 @@
             groupBox2.Controls.Add(chkInteres3);
             groupBox2.Controls.Add(chkInteres2);
             groupBox2.Controls.Add(chkInteres1);
-            groupBox2.Location = new Point(296, 122);
+            groupBox2.Location = new Point(259, 92);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(171, 120);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(150, 90);
             groupBox2.TabIndex = 20;
             groupBox2.TabStop = false;
             groupBox2.Text = "Intereses";
@@ -281,9 +281,10 @@
             // chkInteres3
             // 
             chkInteres3.AutoSize = true;
-            chkInteres3.Location = new Point(70, 83);
+            chkInteres3.Location = new Point(61, 62);
+            chkInteres3.Margin = new Padding(3, 2, 3, 2);
             chkInteres3.Name = "chkInteres3";
-            chkInteres3.Size = new Size(90, 24);
+            chkInteres3.Size = new Size(74, 19);
             chkInteres3.TabIndex = 2;
             chkInteres3.Text = "Compras";
             chkInteres3.UseVisualStyleBackColor = true;
@@ -291,9 +292,10 @@
             // chkInteres2
             // 
             chkInteres2.AutoSize = true;
-            chkInteres2.Location = new Point(70, 53);
+            chkInteres2.Location = new Point(61, 40);
+            chkInteres2.Margin = new Padding(3, 2, 3, 2);
             chkInteres2.Name = "chkInteres2";
-            chkInteres2.Size = new Size(66, 24);
+            chkInteres2.Size = new Size(54, 19);
             chkInteres2.TabIndex = 1;
             chkInteres2.Text = "Playa";
             chkInteres2.UseVisualStyleBackColor = true;
@@ -301,18 +303,19 @@
             // chkInteres1
             // 
             chkInteres1.AutoSize = true;
-            chkInteres1.Location = new Point(70, 23);
+            chkInteres1.Location = new Point(61, 17);
+            chkInteres1.Margin = new Padding(3, 2, 3, 2);
             chkInteres1.Name = "chkInteres1";
-            chkInteres1.Size = new Size(90, 24);
+            chkInteres1.Size = new Size(74, 19);
             chkInteres1.TabIndex = 0;
             chkInteres1.Text = "Montaña";
             chkInteres1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 537);
+            ClientSize = new Size(824, 403);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(txtCorreo);
@@ -334,7 +337,6 @@
             Controls.Add(txtCedula);
             Controls.Add(txtNombre);
             KeyPreview = true;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

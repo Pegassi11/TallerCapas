@@ -44,7 +44,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, clientesToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(942, 28);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(907, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -52,7 +53,7 @@
             // 
             archivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
             archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            archivoToolStripMenuItem.Size = new Size(73, 24);
+            archivoToolStripMenuItem.Size = new Size(60, 20);
             archivoToolStripMenuItem.Text = "&Archivo";
             // 
             // salirToolStripMenuItem
@@ -66,7 +67,7 @@
             // 
             clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abrirClientesToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(75, 24);
+            clientesToolStripMenuItem.Size = new Size(61, 20);
             clientesToolStripMenuItem.Text = "&Clientes";
             // 
             // abrirClientesToolStripMenuItem
@@ -92,12 +93,13 @@
             // 
             // frmPrincipalMDI
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 537);
+            ClientSize = new Size(907, 468);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmPrincipalMDI";
             Text = "frmPrincipalMDI";
             menuStrip1.ResumeLayout(false);
