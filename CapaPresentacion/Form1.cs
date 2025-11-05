@@ -5,8 +5,8 @@ namespace CapaPresentacion
 {
     public partial class Form1 : Form
     {
-        // --- CORRECCI”N 1: Crear una instancia (un objeto) de la capa de negocio ---
-        // Este objeto "cNCliente" ser· el intermediario para todas las operaciones.
+        // --- CORRECCI√ìN 1: Crear una instancia (un objeto) de la capa de negocio ---
+        // Este objeto "cNCliente" ser√° el intermediario para todas las operaciones.
         private CNCliente cNCliente = new CNCliente();
         private CNCategorias cNCategorias = new CNCategorias();
 
@@ -32,11 +32,11 @@ namespace CapaPresentacion
             nudId.Value = 0;
             txtNombre.Text = string.Empty; // o ""
             txtCedula.Text = string.Empty;
-            cmbCateg.SelectedIndex = -1; // Deselecciona cualquier Ìtem
+            cmbCateg.SelectedIndex = -1; // Deselecciona cualquier √≠tem
             pctFoto.Image = null; // Limpia la imagen
             nudMonto.Value = 0;
             txtCorreo.Text = string.Empty;
-            // --- NUEVO C”DIGO (Taller 6) ---
+            // --- NUEVO C√ìDIGO (Taller 6) ---
             // Deseleccionar los radiobuttons del genero
             rbSr.Checked = false;
             rbSra.Checked = false;
@@ -44,7 +44,7 @@ namespace CapaPresentacion
             chkInteres1.Checked = false;
             chkInteres2.Checked = false;
             chkInteres3.Checked = false;
-            // --- FIN NUEVO C”DIGO ---
+            // --- FIN NUEVO C√ìDIGO ---
 
             // Optional: Set focus back to the first field
             //nudId.Focus();
@@ -60,21 +60,21 @@ namespace CapaPresentacion
             cEClientes.fotoCliente = pctFoto.ImageLocation;
             cEClientes.montoTotal = (double)nudMonto.Value;
             cEClientes.Correo = txtCorreo.Text;
-            // Se deben llenar los campos que se aÒadieron a la entidad para evitar errores.
+            // Se deben llenar los campos que se a√±adieron a la entidad para evitar errores.
             cEClientes.fechaCrea = DateTime.Now; // Asigna la fecha y hora actual como ejemplo
-            cEClientes.numLote = ""; // Se debe asignar un valor, aunque sea vacÌo por ahora
-            // Determinar quÈ RadioButton est· seleccionado y asignar el valor
+            cEClientes.numLote = ""; // Se debe asignar un valor, aunque sea vac√≠o por ahora
+            // Determinar qu√© RadioButton est√° seleccionado y asignar el valor
             if (rbSr.Checked)
             {
-                cEClientes.Genero = "Sr."; // Guarda "Sr." si rbSr est· marcado
+                cEClientes.Genero = "Sr."; // Guarda "Sr." si rbSr est√° marcado
             }
             else if (rbSra.Checked)
             {
-                cEClientes.Genero = "Sra."; // Guarda "Sra." si rbSra est· marcado
+                cEClientes.Genero = "Sra."; // Guarda "Sra." si rbSra est√° marcado
             }
             else
             {
-                cEClientes.Genero = ""; // Guarda vacÌo si ninguno est· marcado
+                cEClientes.Genero = ""; // Guarda vac√≠o si ninguno est√° marcado
             }
             // Ver cada interes seleccionado en los CheckBoxes
             cEClientes.Interes1 = chkInteres1.Checked; // verdadero si es seleccionado
@@ -99,7 +99,7 @@ namespace CapaPresentacion
             // Primero, se comprueba si hay una fila seleccionada para evitar errores
             if (dgvDatos.CurrentRow != null)
             {
-                // --- CORRECCI”N: Se usan los nombres de columna exactos de la base de datos ---
+                // --- CORRECCI√ìN: Se usan los nombres de columna exactos de la base de datos ---
                 if (dgvDatos.CurrentRow.Cells["IdClientes"].Value != DBNull.Value)
                     nudId.Value = Convert.ToInt32(dgvDatos.CurrentRow.Cells["IdClientes"].Value);
                 else
@@ -114,8 +114,8 @@ namespace CapaPresentacion
                     nudMonto.Value = 0;
                 pctFoto.ImageLocation = dgvDatos.CurrentRow.Cells["FotoCliente"].Value?.ToString() ?? string.Empty;
                 txtCorreo.Text = dgvDatos.CurrentRow.Cells["Correo"].Value?.ToString() ?? string.Empty;
-                // --- C”DIGO NUEVO (Taller 6) ---
-                // Cargar el GÈnero en los RadioButtons
+                // --- C√ìDIGO NUEVO (Taller 6) ---
+                // Cargar el G√©nero en los RadioButtons
                 string genero = dgvDatos.CurrentRow.Cells["Genero"].Value?.ToString() ?? string.Empty;
                 if (genero == "Sr.")
                 {
@@ -127,37 +127,37 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    // Si no hay gÈnero guardado, desmarcar ambos
+                    // Si no hay g√©nero guardado, desmarcar ambos
                     rbSr.Checked = false;
                     rbSra.Checked = false;
                 }
 
                 // Cargar los Intereses en los CheckBoxes
                 // Se usa Convert.ToBoolean para pasar de bit (0/1) a true/false
-                object v1 = dgvDatos.CurrentRow.Cells["Interes1"].Value;
-                chkInteres1.Checked = v1 != DBNull.Value && Convert.ToBoolean(v1);
+                var val1 = dgvDatos.CurrentRow.Cells["Interes1"].Value;
+                chkInteres1.Checked = val1 != DBNull.Value && Convert.ToBoolean(val1);
 
-                object v2 = dgvDatos.CurrentRow.Cells["Interes2"].Value;
-                chkInteres2.Checked = v2 != DBNull.Value && Convert.ToBoolean(v2);
+                var val2 = dgvDatos.CurrentRow.Cells["Interes2"].Value;
+                chkInteres2.Checked = val2 != DBNull.Value && Convert.ToBoolean(val2);
 
-                object v3 = dgvDatos.CurrentRow.Cells["Interes3"].Value;
-                chkInteres3.Checked = v3 != DBNull.Value && Convert.ToBoolean(v3);
-                // --- FIN C”DIGO NUEVO ---
+                var val3 = dgvDatos.CurrentRow.Cells["Interes3"].Value;
+                chkInteres3.Checked = val3 != DBNull.Value && Convert.ToBoolean(val3);
+                // --- FIN C√ìDIGO NUEVO ---
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Ahora simplemente se ejecuta el procedimiento est·ndar de carga.
+            // Ahora simplemente se ejecuta el procedimiento est√°ndar de carga.
             CargarGrid();
-            // --- C”DIGO DEL TALLER 5 ---
+            // --- C√ìDIGO DEL TALLER 5 ---
             // 1. Se conecta el ComboBox a la fuente de datos
             cmbCateg.DataSource = cNCategorias.obtenerDatos().Tables["categorias"];
 
-            // 2. Se le dice quÈ columna mostrar al usuario
+            // 2. Se le dice qu√© columna mostrar al usuario
             cmbCateg.DisplayMember = "descCat";
 
-            // 3. Se le dice quÈ columna usar como valor interno
+            // 3. Se le dice qu√© columna usar como valor interno
             cmbCateg.ValueMember = "idCategoria";
         }
 
@@ -176,21 +176,21 @@ namespace CapaPresentacion
                 cEClientes.Correo = txtCorreo.Text;
                 if (rbSr.Checked)
                 {
-                    cEClientes.Genero = "Sr."; // Guarda "Sr." si rbSr est· marcado
+                    cEClientes.Genero = "Sr."; // Guarda "Sr." si rbSr est√° marcado
                 }
                 else if (rbSra.Checked)
                 {
-                    cEClientes.Genero = "Sra."; // Guarda "Sra." si rbSra est· marcado
+                    cEClientes.Genero = "Sra."; // Guarda "Sra." si rbSra est√° marcado
                 }
                 else
                 {
-                    cEClientes.Genero = ""; // Opcional: Guarda vacÌo si ninguno est· marcado
+                    cEClientes.Genero = ""; // Opcional: Guarda vac√≠o si ninguno est√° marcado
                 }
                 cEClientes.Interes1 = chkInteres1.Checked;
                 cEClientes.Interes2 = chkInteres2.Checked;
                 cEClientes.Interes3 = chkInteres3.Checked;
 
-                // 2. Llamar al mÈtodo de la capa de negocio para actualizar.
+                // 2. Llamar al m√©todo de la capa de negocio para actualizar.
                 cNCliente.ActualizarCliente(cEClientes);
 
                 // 3. Notificar al usuario y refrescar la tabla.
@@ -204,7 +204,7 @@ namespace CapaPresentacion
         }
         private void CargarGrid()
         {
-            // Esta es la misma lÌnea de cÛdigo que est· en el evento Form_Load.
+            // Esta es la misma l√≠nea de c√≥digo que est√° en el evento Form_Load.
             // Pide los datos a la capa de negocio y los asigna a la tabla.
             dgvDatos.DataSource = cNCliente.obtenerDatos().Tables["clientes"];
         }
@@ -215,11 +215,11 @@ namespace CapaPresentacion
             if (nudId.Value == 0)
             {
                 // Se muestra un mensaje de error al usuario.
-                MessageBox.Show("El ID del cliente no puede ser cero.", "Error de ValidaciÛn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El ID del cliente no puede ser cero.", "Error de Validaci√≥n", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                // --- °Crucial! ---
+                // --- ¬°Crucial! ---
                 // Se cancela el evento. Esto evita que el usuario pueda
-                // abandonar el control hasta que ingrese un valor v·lido.
+                // abandonar el control hasta que ingrese un valor v√°lido.
                 e.Cancel = true;
             }
         }
@@ -228,32 +228,32 @@ namespace CapaPresentacion
         {
             string correo = txtCorreo.Text;
 
-            // Permite que el campo estÈ vacÌo (si no es obligatorio)
+            // Permite que el campo est√© vac√≠o (si no es obligatorio)
             if (string.IsNullOrWhiteSpace(correo))
             {
                 return;
             }
 
-            // ValidaciÛn b·sica de formato de correo (simplificada)
-            // Busca un patrÛn como "algo@algo.algo"
+            // Validaci√≥n b√°sica de formato de correo (simplificada)
+            // Busca un patr√≥n como "algo@algo.algo"
             bool esValido = System.Text.RegularExpressions.Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
             if (!esValido)
             {
-                MessageBox.Show("El formato del correo electrÛnico no es v·lido.", "Error de ValidaciÛn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del correo electr√≥nico no es v√°lido.", "Error de Validaci√≥n", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true; // Impide salir del control
             }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            // Compruba la tecla Control est· presionada junto con la tecla S
+            // Compruba la tecla Control est√° presionada junto con la tecla S
             if (e.Control && e.KeyCode == Keys.S)
             {
                 // Si ambas condiciones se cumplen, se muestra el mensaje
-                MessageBox.Show("GuardandoÖ");
+                MessageBox.Show("Guardando¬Ö");
 
-                // Opcional: llamar al mÈtodo de guardado
+                // Opcional: llamar al m√©todo de guardado
                 // btnGuardar_Click(sender, e);
             }
         }
