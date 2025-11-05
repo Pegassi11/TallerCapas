@@ -33,13 +33,15 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             abrirClientesToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
+            estadoDeCuentaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, clientesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, clientesToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(942, 28);
@@ -56,7 +58,7 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(224, 26);
+            salirToolStripMenuItem.Size = new Size(121, 26);
             salirToolStripMenuItem.Text = "&Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -70,9 +72,23 @@
             // abrirClientesToolStripMenuItem
             // 
             abrirClientesToolStripMenuItem.Name = "abrirClientesToolStripMenuItem";
-            abrirClientesToolStripMenuItem.Size = new Size(190, 26);
+            abrirClientesToolStripMenuItem.Size = new Size(224, 26);
             abrirClientesToolStripMenuItem.Text = "&Abrir Clientes...";
             abrirClientesToolStripMenuItem.Click += abrirClientesToolStripMenuItem_Click;
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estadoDeCuentaToolStripMenuItem });
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(82, 24);
+            reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // estadoDeCuentaToolStripMenuItem
+            // 
+            estadoDeCuentaToolStripMenuItem.Name = "estadoDeCuentaToolStripMenuItem";
+            estadoDeCuentaToolStripMenuItem.Size = new Size(224, 26);
+            estadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta";
+            estadoDeCuentaToolStripMenuItem.Click += estadoDeCuentaToolStripMenuItem_Click;
             // 
             // frmPrincipalMDI
             // 
@@ -97,5 +113,7 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem abrirClientesToolStripMenuItem;
+        private ToolStripMenuItem reportesToolStripMenuItem;
+        private ToolStripMenuItem estadoDeCuentaToolStripMenuItem;
     }
 }

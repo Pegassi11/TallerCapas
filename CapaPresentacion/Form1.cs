@@ -134,9 +134,14 @@ namespace CapaPresentacion
 
                 // Cargar los Intereses en los CheckBoxes
                 // Se usa Convert.ToBoolean para pasar de bit (0/1) a true/false
-                chkInteres1.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes1"].Value);
-                chkInteres2.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes2"].Value);
-                chkInteres3.Checked = Convert.ToBoolean(dgvDatos.CurrentRow.Cells["Interes3"].Value);
+                var val1 = dgvDatos.CurrentRow.Cells["Interes1"].Value;
+                chkInteres1.Checked = val1 != DBNull.Value && Convert.ToBoolean(val1);
+
+                var val2 = dgvDatos.CurrentRow.Cells["Interes2"].Value;
+                chkInteres2.Checked = val2 != DBNull.Value && Convert.ToBoolean(val2);
+
+                var val3 = dgvDatos.CurrentRow.Cells["Interes3"].Value;
+                chkInteres3.Checked = val3 != DBNull.Value && Convert.ToBoolean(val3);
                 // --- FIN CÓDIGO NUEVO ---
             }
         }
