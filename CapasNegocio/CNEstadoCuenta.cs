@@ -12,5 +12,11 @@ namespace CapasNegocio
  {
  return cdEstadoCuenta.ObtenerEstadoCuentaTable(idCliente, desde, hasta);
  }
+
+ // Nuevo método para devolver todo el DataSet maestro-detalle
+ public DataSet obtenerDatosDataSet()
+ {
+ return cdEstadoCuenta.ObtenerEstadoCuentaDataSet();
+ }
  }
 }

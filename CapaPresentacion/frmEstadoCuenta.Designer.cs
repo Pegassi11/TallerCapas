@@ -38,82 +38,92 @@
             lblSaldo = new Label();
             btnAceptar = new Button();
             label4 = new Label();
+            btnImprimir = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvReporte).BeginInit();
             SuspendLayout();
             // 
             // cbxCliente
             // 
             cbxCliente.FormattingEnabled = true;
-            cbxCliente.Location = new Point(108, 15);
+            cbxCliente.Location = new Point(135, 19);
+            cbxCliente.Margin = new Padding(4);
             cbxCliente.Name = "cbxCliente";
-            cbxCliente.Size = new Size(135, 28);
+            cbxCliente.Size = new Size(168, 33);
             cbxCliente.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 18);
+            label1.Location = new Point(40, 22);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
+            label1.Size = new Size(83, 25);
             label1.TabIndex = 1;
             label1.Text = "IDCliente";
             // 
             // dgvReporte
             // 
             dgvReporte.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvReporte.Location = new Point(17, 147);
+            dgvReporte.Location = new Point(21, 178);
+            dgvReporte.Margin = new Padding(4);
             dgvReporte.Name = "dgvReporte";
             dgvReporte.ReadOnly = true;
             dgvReporte.RowHeadersWidth = 51;
-            dgvReporte.Size = new Size(759, 270);
+            dgvReporte.Size = new Size(949, 344);
             dgvReporte.TabIndex = 2;
             // 
             // dtFecha
             // 
-            dtFecha.Location = new Point(108, 49);
+            dtFecha.Location = new Point(135, 61);
+            dtFecha.Margin = new Padding(4);
             dtFecha.Name = "dtFecha";
-            dtFecha.Size = new Size(278, 27);
+            dtFecha.Size = new Size(346, 31);
             dtFecha.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 49);
+            label2.Location = new Point(19, 61);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(87, 20);
+            label2.Size = new Size(104, 25);
             label2.TabIndex = 4;
             label2.Text = "Fecha Inicio";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 87);
+            label3.Location = new Point(40, 109);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(70, 20);
+            label3.Size = new Size(85, 25);
             label3.TabIndex = 6;
             label3.Text = "Fecha Fin";
             // 
             // dtFechaFin
             // 
-            dtFechaFin.Location = new Point(108, 82);
+            dtFechaFin.Location = new Point(135, 102);
+            dtFechaFin.Margin = new Padding(4);
             dtFechaFin.Name = "dtFechaFin";
-            dtFechaFin.Size = new Size(278, 27);
+            dtFechaFin.Size = new Size(346, 31);
             dtFechaFin.TabIndex = 5;
             // 
             // lblSaldo
             // 
             lblSaldo.AutoSize = true;
-            lblSaldo.Location = new Point(340, 23);
+            lblSaldo.Location = new Point(425, 29);
+            lblSaldo.Margin = new Padding(4, 0, 4, 0);
             lblSaldo.Name = "lblSaldo";
-            lblSaldo.Size = new Size(47, 20);
+            lblSaldo.Size = new Size(57, 25);
             lblSaldo.TabIndex = 7;
             lblSaldo.Text = "Saldo";
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(463, 15);
+            btnAceptar.Location = new Point(519, 15);
+            btnAceptar.Margin = new Padding(4);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(250, 94);
+            btnAceptar.Size = new Size(138, 118);
             btnAceptar.TabIndex = 8;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
@@ -122,17 +132,29 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(249, 23);
+            label4.Location = new Point(311, 29);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(85, 20);
+            label4.Size = new Size(102, 25);
             label4.TabIndex = 9;
             label4.Text = "Saldo Final:";
             // 
+            // btnImprimir
+            // 
+            btnImprimir.Location = new Point(664, 15);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(155, 119);
+            btnImprimir.TabIndex = 10;
+            btnImprimir.Text = "Generar Reporte";
+            btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
+            // 
             // frmEstadoCuenta
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1000, 562);
+            Controls.Add(btnImprimir);
             Controls.Add(label4);
             Controls.Add(btnAceptar);
             Controls.Add(lblSaldo);
@@ -143,6 +165,7 @@
             Controls.Add(dgvReporte);
             Controls.Add(label1);
             Controls.Add(cbxCliente);
+            Margin = new Padding(4);
             Name = "frmEstadoCuenta";
             Text = "frmEstadoCuenta";
             Load += frmEstadoCuenta_Load;
@@ -163,5 +186,6 @@
         private Label lblSaldo;
         private Button btnAceptar;
         private Label label4;
+        private Button btnImprimir;
     }
 }

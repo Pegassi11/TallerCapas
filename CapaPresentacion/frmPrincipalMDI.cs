@@ -55,5 +55,40 @@ namespace CapaPresentacion
             reporteForm.MdiParent = this; // Asigna este formulario como el contenedor
             reporteForm.Show();
         }
+
+        private void clientesDataTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Verifica si el formulario DataTable ya está abierto
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm is Form1DataTable)
+                {
+                    childForm.Activate();
+                    return;
+                }
+            }
+
+            // Si no está abierto, crearlo
+            Form1DataTable clientesForm = new Form1DataTable();
+            clientesForm.MdiParent = this;
+            clientesForm.Show();
+        }
+
+        private void estadoDeCuentaDataSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Verifica si ya está abierto
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm is frmEstadoCuentaDataSet)
+                {
+                    childForm.Activate();
+                    return;
+                }
+            }
+
+            var frm = new frmEstadoCuentaDataSet();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

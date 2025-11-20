@@ -33,8 +33,10 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             abrirClientesToolStripMenuItem = new ToolStripMenuItem();
+            clientesDataTableToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
             estadoDeCuentaToolStripMenuItem = new ToolStripMenuItem();
+            estadoDeCuentaDataSetToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,8 +46,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, clientesToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(907, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(1296, 35);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -53,53 +55,67 @@
             // 
             archivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
             archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            archivoToolStripMenuItem.Size = new Size(60, 20);
+            archivoToolStripMenuItem.Size = new Size(88, 29);
             archivoToolStripMenuItem.Text = "&Archivo";
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(121, 26);
+            salirToolStripMenuItem.Size = new Size(147, 34);
             salirToolStripMenuItem.Text = "&Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
-            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abrirClientesToolStripMenuItem });
+            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abrirClientesToolStripMenuItem, clientesDataTableToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(61, 20);
-            clientesToolStripMenuItem.Text = "&Clientes";
+            clientesToolStripMenuItem.Size = new Size(89, 29);
+            clientesToolStripMenuItem.Text = "Clientes";
             // 
             // abrirClientesToolStripMenuItem
             // 
             abrirClientesToolStripMenuItem.Name = "abrirClientesToolStripMenuItem";
-            abrirClientesToolStripMenuItem.Size = new Size(224, 26);
-            abrirClientesToolStripMenuItem.Text = "&Abrir Clientes...";
+            abrirClientesToolStripMenuItem.Size = new Size(270, 34);
+            abrirClientesToolStripMenuItem.Text = "Clientes (DataSet)";
             abrirClientesToolStripMenuItem.Click += abrirClientesToolStripMenuItem_Click;
+            // 
+            // clientesDataTableToolStripMenuItem
+            // 
+            clientesDataTableToolStripMenuItem.Name = "clientesDataTableToolStripMenuItem";
+            clientesDataTableToolStripMenuItem.Size = new Size(270, 34);
+            clientesDataTableToolStripMenuItem.Text = "Clientes (DataTable)";
+            clientesDataTableToolStripMenuItem.Click += clientesDataTableToolStripMenuItem_Click;
             // 
             // reportesToolStripMenuItem
             // 
-            reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estadoDeCuentaToolStripMenuItem });
+            reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estadoDeCuentaToolStripMenuItem, estadoDeCuentaDataSetToolStripMenuItem });
             reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            reportesToolStripMenuItem.Size = new Size(82, 24);
+            reportesToolStripMenuItem.Size = new Size(98, 29);
             reportesToolStripMenuItem.Text = "Reportes";
             // 
             // estadoDeCuentaToolStripMenuItem
             // 
             estadoDeCuentaToolStripMenuItem.Name = "estadoDeCuentaToolStripMenuItem";
-            estadoDeCuentaToolStripMenuItem.Size = new Size(224, 26);
-            estadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta";
+            estadoDeCuentaToolStripMenuItem.Size = new Size(389, 34);
+            estadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta (pAlmacendado)";
             estadoDeCuentaToolStripMenuItem.Click += estadoDeCuentaToolStripMenuItem_Click;
+            // 
+            // estadoDeCuentaDataSetToolStripMenuItem
+            // 
+            estadoDeCuentaDataSetToolStripMenuItem.Name = "estadoDeCuentaDataSetToolStripMenuItem";
+            estadoDeCuentaDataSetToolStripMenuItem.Size = new Size(389, 34);
+            estadoDeCuentaDataSetToolStripMenuItem.Text = "Estado de Cuenta (DataSet)";
+            estadoDeCuentaDataSetToolStripMenuItem.Click += estadoDeCuentaDataSetToolStripMenuItem_Click;
             // 
             // frmPrincipalMDI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(907, 468);
+            ClientSize = new Size(1296, 780);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "frmPrincipalMDI";
             Text = "frmPrincipalMDI";
             menuStrip1.ResumeLayout(false);
@@ -117,5 +133,7 @@
         private ToolStripMenuItem abrirClientesToolStripMenuItem;
         private ToolStripMenuItem reportesToolStripMenuItem;
         private ToolStripMenuItem estadoDeCuentaToolStripMenuItem;
+        private ToolStripMenuItem clientesDataTableToolStripMenuItem;
+        private ToolStripMenuItem estadoDeCuentaDataSetToolStripMenuItem;
     }
 }

@@ -9,8 +9,49 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3595.46" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.26" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CapasEntidad\CapasEntidad.csproj" />
     <ProjectReference Include="..\CapasNegocio\CapasNegocio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DB_ClientesDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DB_ClientesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DB_ClientesDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DB_ClientesDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reportes\dsReporte.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsReporte.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DB_ClientesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_ClientesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DB_ClientesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_ClientesDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reportes\dsReporte.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporte.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reportes\ReporteSaldoClientes.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

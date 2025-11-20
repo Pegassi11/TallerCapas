@@ -33,11 +33,6 @@ namespace CapasDatos
  if (col != null)
  col.ColumnName = "idtrans";
  }
- if (dt.Columns.Contains("idtrans") && !dt.Columns.Contains("IdTransacciones"))
- {
- // opcional: mantener minúscula "idtrans" para consistencia
- }
-
  if (dt.Columns.Contains("fecha") && !dt.Columns.Contains("Fecha"))
  {
  var col = dt.Columns["fecha"];
@@ -67,6 +62,45 @@ namespace CapasDatos
  }
 
  return dt;
+ }
+
+ // Nuevo método: devuelve un DataSet con Clientes y Transacciones y la relación entre ambas (fuerza bruta)
+ public DataSet ObtenerEstadoCuentaDataSet()
+ {
+ var ds = new DataSet("Empresa");
+
+ using var conexion = new SqlConnection(CadenaConexion);
+ conexion.Open();
+
+ // Cargar clientes
+ using (var daCli = new SqlDataAdapter("SELECT IdClientes, NombreComp, CedCliente FROM Clientes", conexion))
+ {
+ daCli.Fill(ds, "Clientes");
+ }
+
+ // Cargar transacciones
+ // Incluir tipoTrans para poder distinguir Debe/Haber al calcular en memoria
+ using (var daTrans = new SqlDataAdapter("SELECT idtransacciones AS idtrans, idCliente AS IdCliente, Fecha, monto AS Monto, tipoTrans FROM Transacciones", conexion))
+ {
+ daTrans.Fill(ds, "Transacciones");
+ }
+
+ // Si ambas tablas existen, establecer la relación (clave maestro-detalle)
+ if (ds.Tables.Contains("Clientes") && ds.Tables.Contains("Transacciones"))
+ {
+ var parentColName = "IdClientes";
+ var childColName = "IdCliente"; // alias usado en la consulta de transacciones
+
+ // Asegurarse de que las columnas existan
+ if (ds.Tables["Clientes"].Columns.Contains(parentColName) && ds.Tables["Transacciones"].Columns.Contains(childColName))
+ {
+ ds.Relations.Add("Rel_Clientes_transacciones",
+ ds.Tables["Clientes"].Columns[parentColName],
+ ds.Tables["Transacciones"].Columns[childColName]);
+ }
+ }
+
+ return ds;
  }
  }
 }

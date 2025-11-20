@@ -42,6 +42,17 @@ namespace CapasNegocio
         {
             return CDCliente.lista();
         }
+
+        // Nuevo método para devolver un DataTable directamente
+        public DataTable obtenerDatosTabla()
+        {
+            var ds = CDCliente.lista();
+            if (ds != null && ds.Tables.Contains("clientes"))
+                return ds.Tables["clientes"];
+            // Si por alguna razón no existe la tabla, devolver una tabla vacía para evitar null refs
+            return new DataTable();
+        }
+
         public void ActualizarCliente(CEClientes cE)
         {
             // Se reutiliza la validación para asegurar que los datos son correctos.
